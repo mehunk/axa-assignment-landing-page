@@ -2,7 +2,7 @@
 
 ## Summary
 
-There are four projects to accomplish the AXA assignment.
+There are four projects to implement the AXA assignment.
 
 1. [**backend-api**](https://github.com/mehunk/axa-assignment-api): One of backend services to access database and provide api to the backend for frontend.
 2. [**backend-for-frontend**](https://github.com/mehunk/axa-assignment-bff): Another backend service to provide api to the frontend.
@@ -21,6 +21,12 @@ I have deployed all of these projects to Cloudflare Page or Vercel by GitHub Act
 - [Landing Page](https://axa-assignment-landing-page.vercel.app/)
 - [Frontend](https://axa-assignment-frontend.pages.dev/insurance-quotes/new)
 
+### How to deploy
+
+I use GitHub Actions to deploy all of these projects. You can find the workflow files in the `.github/workflows` folder.
+
+Due to time constraints, I did not write the docker-compose file to deploy all of these projects. If you want to run these projects locally, you need to run manually.
+
 ## Design Considerations
 
 ### MySQL
@@ -36,7 +42,7 @@ Relationships between tables are as the following.
 - vehicle_type 1-N insurance_quote
 - product 1-N insurance_quote
 
-I do not use the foreign key constraint because I want to keep the database simple. I think it is not necessary to use the foreign key constraint in this case.
+I do not use the foreign key constraint because I want to keep the database simple. I think it is not necessary to use the foreign key constraint in this case. Besides, foreign key will slow down the database performance.
 
 ### Backend API
 
